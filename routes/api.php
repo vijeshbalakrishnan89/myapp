@@ -18,6 +18,7 @@ $api->version('v1',function ($api)
         //  $api->post('Productinfo','productcontroller@insert_product_detail');
        // $api->post('matrimonyinfo','matrimonycontroller@insert_matrimony_info');
         $api->post('iteminfo','storecontroller@create_iteminfo');
+        $api->put('iteminfo','storecontroller@update_iteminfo');
     
     }
 );
