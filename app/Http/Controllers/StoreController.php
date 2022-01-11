@@ -14,9 +14,9 @@ class StoreController extends Controller
   {
       $data = $request->all();
       $validated = Validator::make($data,[
-          'item_name'       => 'required|string|max:255',
+          'item_name'        => 'required|string|max:255',
           'item_price'       => 'required|string|max:255',
-          'item_weight'    => 'required|string|max:255'
+          'item_weight'      => 'required|string|max:255'
           
       ]);
 
