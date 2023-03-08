@@ -12,9 +12,10 @@ $api->version('v1',function ($api)
     {
 
       
-      // $api->post('usercontactdetails','usercontactdetailscontroller@create_usercontactdetails');
-      // $api->put('usercontactdetails/{id}','usercontactdetailscontroller@update_usercontactdetails');
+         $api->post('usercontactdetails','usercontactdetailscontroller@create_usercontactdetails');
+         $api->put('contacts/{Customerid}','usercontactdetailscontroller@showsingleUsr_usercontactdetails');
          $api->get('contacts','usercontactdetailscontroller@select_usercontactdetails');
+         $api->get('hello/world','usercontactdetailscontroller@helloWorld');
     }
 );
 }

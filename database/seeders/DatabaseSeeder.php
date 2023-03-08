@@ -13,9 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            MatrimonyUserSeeder::class,
-            MySecondTableSeeders::class
-        ]);
+        $this->call(UserTableseeder::class);
+       // $this->call([
+         //   MatrimonyUserSeeder::class,
+         //   MySecondTableSeeders::class
+      //  ]);
     }
 }

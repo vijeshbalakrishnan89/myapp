@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\usercontactdetails;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\UserController;
+use Auth;
 
 
 
@@ -39,7 +40,7 @@ class usercontactdetailscontroller extends Controller
      {
          $data = $request->all();
          $validated = Validator::make($data,[
-             'Name'           => 'required|string|max:255',
+             'Name'           => 'required|string|max:255', 
              'mailid'         => 'required|string|max:255',
              'contactnumber'  => 'required|string|max:255',
              'state'          => 'required|string|max:255',
@@ -53,9 +54,22 @@ class usercontactdetailscontroller extends Controller
  
      }
  //====================UPDATE END========================
-
+ //====================Show table start========================
  public function select_usercontactdetails()
  {
-    return usercontactdetails::select('Name','mailid','contactnumber')->get();
+    return usercontactdetails::select('Name','mailid','state')->get();
+ }
+ //===========================Show Table END=========================
+ //====================Show single user ========================
+ public function showsingleUsr_usercontactdetails()
+ {
+    // return usercontactdetails::where('Customerid')->get(); 
+    $customer_id = usercontactdetails::user('Customerid')->id;
+    //return usercontactdetails('tasks.showByUserId', [ "task" => $task]);
+ }
+ //===========================Show Table END=========================
+ public function helloWorld(Request $request){
+
+    return json_encode(['status' => 200 , 'message' => "Hello Vijesh"]);
  }
 }
